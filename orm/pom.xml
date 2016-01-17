@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.agilejerry</groupId>
+	<artifactId>orm</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>orm</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- hibernate start -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.11.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.11.Final</version>
+		</dependency>
+		<!-- hibernate 4.3.0 end -->
+		<!-- Hibernate uses jboss-logging for logging, for the tutorials we will 
+			use the sl4fj-simple backend -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<!--将maven的编译和运行环境配置成jdk1.5 eg：junit4使用了jdk1.5的annotations，则必须将maven-compiler-plugin配置成1.5以上 -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<!-- maven默认支持junit3.8.4，要支持junit4需重新配置 ,添加surefire-junit4plugin -->
+			<plugin>
+				<groupId>org.apache.maven.surefire</groupId>
+				<artifactId>surefire-junit4</artifactId>
+				<version>2.4.3</version>
+				<configuration>
+					<skip>false</skip>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
