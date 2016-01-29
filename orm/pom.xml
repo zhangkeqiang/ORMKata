@@ -53,8 +53,8 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 			<!-- maven默认支持junit3.8.4，要支持junit4需重新配置 ,添加surefire-junit4plugin -->
