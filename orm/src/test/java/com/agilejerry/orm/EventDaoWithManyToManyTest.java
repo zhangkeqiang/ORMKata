@@ -135,7 +135,6 @@ public class EventDaoWithManyToManyTest {
 //		try {
 //			Thread.sleep(20000);
 //		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 		
