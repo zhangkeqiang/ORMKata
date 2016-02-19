@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.agilejerry.orm.model.CustomerDao;
 import com.agilejerry.orm.model.CustomerNoAnno;
 
 import org.hibernate.HibernateException;
@@ -31,7 +32,7 @@ public class CustomerTest {
             Session session = sf.openSession();
             Transaction tx = session.beginTransaction();
 
-            for (int i = 0; i < 200; i++) {
+            for (int i = 0; i < 20; i++) {
                 CustomerNoAnno customer = new CustomerNoAnno();
                 customer.setUsername("customer" + i);
                 customer.setPassword("customer");
@@ -49,6 +50,8 @@ public class CustomerTest {
 	
 	@After
 	public void tearDown(){
+	    CustomerDao customerDao = new CustomerDao();
+	    customerDao.clearIDAbove(3);
 		if ( sf != null ) {
 			sf.close();
 		}

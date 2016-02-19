@@ -1,5 +1,6 @@
 package com.agilejerry.orm;
  
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
  
@@ -25,6 +26,10 @@ public class HibernateUtil {
 	public static void shutdown() {
 		// Close caches and connection pools
 		getSessionFactory().close();
+	}
+	
+	public static Session getCurrentSession(){
+	    return sessionFactory.getCurrentSession();
 	}
  
 }

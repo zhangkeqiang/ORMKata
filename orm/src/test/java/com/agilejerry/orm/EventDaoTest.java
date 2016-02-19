@@ -85,7 +85,7 @@ public class EventDaoTest {
 	
 	@After
 	public void clear(){
-		eventDao.clearIDAbove(2);
+		eventDao.clearIDAbove(3);
         session.close();
 	}
 }

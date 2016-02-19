@@ -33,7 +33,7 @@ public class EventDaoWithManyToManyTest {
 		EventDao eventDao = new EventDao(session);
 		eventDao.clearIDAbove(2);
 		CustomerDao customDao = new CustomerDao();
-		customDao.clearIDAbove(2);
+		customDao.clearIDAbove(3);
         session.close();
 	}
 	
@@ -135,7 +135,6 @@ public class EventDaoWithManyToManyTest {
 //		try {
 //			Thread.sleep(20000);
 //		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 		

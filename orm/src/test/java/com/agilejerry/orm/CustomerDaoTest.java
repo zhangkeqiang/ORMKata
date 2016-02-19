@@ -38,7 +38,7 @@ public class CustomerDaoTest {
 
 	@After
 	public void clear(){
-		customerDao.clearIDAbove(2);
+		customerDao.clearIDAbove(3);
 	}
 
 }
